@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+  padding: 0;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+header img{
+  height: 100px;
+  width: 100px;
+}
+
+body{
+  background-image: url(/tests/MIDTERM/my_images/donate.jpeg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+main{
+display: flex;
+justify-content: space-around;
+padding: 20px;
+flex-direction: column;
+align-items: center;
+}
+
+.donations{
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-evenly;
+}
+
+h1{
+  text-align: center;
+  margin: 15px;
+  padding: 5px;
+}
+
+.donation-option{
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  width: 300px;
+  margin: 20px;
+  background-color: #403832;
+  opacity: 0.5;
+}
+
+.donation-option input, .donation-option select, .donation-option button {
+  margin: 5px 0;
+}
+
+.donation-option h2, .donation-option p{
+  color: white;
+  opacity: 1;
+}
+
+footer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #f8f9fa;
+  width: auto;
+  padding: 20px;
+}
