@@ -1,4 +1,5 @@
-import { ArrowRight, Download} from "lucide-react"
+import { ArrowRight } from "lucide-react"
+import { FaGithub, FaLinkedin } from "react-icons/fa"
 import { Button } from "../components/Button"
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton"
 
@@ -67,12 +68,43 @@ export const Hero = () => {
                                 <AnimatedBorderButton/>
                         </div>
                         {/**Social Links */}
-                        <div>
-                            <span>Follow Me: </span>
-
+                        <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
+                            <span className="text-sm text-muted-foreground">Follow me: </span>
+                            {[
+                               { icon: FaGithub, href: "#" },
+                                { icon: FaLinkedin, href: "#" },
+                            ].map((social, idx) => (
+                                <a
+                                key={idx}
+                                href={social.href}
+                                className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300"
+                                >
+                                {<social.icon className="w-5 h-5" />}
+                                </a>
+                            ))}
                         </div>
                     </div>
                     {/**Right Column - Profile Image */}
+                    <div>
+                        {/**Profile Image */}
+                        <div>
+                            <div className="relative max-w-md mx-auto">
+                                <img 
+                                    src="" 
+                                    alt="Ana Brengle" 
+                                    className="w-full aspect-[4/5] object-cover rounded-2xl"
+                                />
+                                {/**Floating Badge */}
+                                <div className="absolute -bottom-4 -right-4 glass rounded-xl px-4 py-3 animate-float">
+                                    <div>
+                                        <div/>
+                                        <span>Looking for work</span>
+                                    </div>
+                                </div>
+                                {/**Stats Badge */}
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
