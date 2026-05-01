@@ -1,4 +1,4 @@
-import { ArrowRight,ChevronDown } from "lucide-react"
+import { ArrowRight,ChevronDown, Download } from "lucide-react"
 import { FaGithub, FaLinkedin } from "react-icons/fa"
 import { Button } from "../components/Button"
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton"
@@ -35,6 +35,7 @@ export const Hero = () => {
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 {[...Array(30)].map((__, i) => (
                     <div 
+                        key={`dot-${i}`}
                         className="absolute w-1 h-1.5 rounded-full opacity-60"
                         style={{
                             backgroundColor: "#20B2A6",
@@ -75,22 +76,28 @@ export const Hero = () => {
                         </div>
                         {/**CTA */}
                         <div className="flex flex-wrap gap-4 animate-fade-in animation-delay">
-                            <Button size="lg">
-                                Contact Me <ArrowRight className="w-5 h-5"/>
-                            </Button>
+                           <a href="#contact">
+                                <Button size="lg">
+                                    Contact Me <ArrowRight className="w-5 h-5"/>
+                                </Button>
+                            </a>
                                 {/**Animated SVG Button */}
-                                <AnimatedBorderButton/>
+                                <AnimatedBorderButton>
+                                    Download CV
+                                </AnimatedBorderButton>
                         </div>
                         {/**Social Links */}
                         <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
                             <span className="text-sm text-muted-foreground">Follow me: </span>
                             {[
                                { icon: FaGithub, href: "#" },
-                                { icon: FaLinkedin, href: "#" },
+                                { icon: FaLinkedin, href: "https://www.linkedin.com/in/mariana-brengle-a1b05a3b3" },
                             ].map((social, idx) => (
                                 <a
                                 key={idx}
                                 href={social.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300"
                                 >
                                 {<social.icon className="w-5 h-5" />}
